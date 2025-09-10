@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blogs </title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <a class="brand" href="/">
+        <div class="logo">B</div>
+        <div>
+          <div style="font-weight:700">ThoughtNest</div>
+          <div class="small">Write. Share. Discover.</div>
+        </div>
+      </a>
+      <nav class="navlinks">
+        <% if (user) { %>
+          <a href="/blogs/new" class="btn btn-primary">New Post</a>
+          <a href="/auth/logout" class="btn btn-ghost">Logout</a>
+        <% } else { %>
+          <a href="/auth/google" class="btn btn-primary">Login with Google</a>
+        <% } %>
+      </nav>
+    </header>
+
+    <h1 class="center">All Blogs</h1>
+    <div class="cards">
+      <% blogs.forEach(blog => { %>
+        <div class="blog-card">
+          <h2><%= blog.title %></h2>
+          <p><%= blog.content %></p>
+          <div class="blog-meta">
+            <span>By <%= blog.author.displayName %></span>
+            <span><%= blog.createdAt.toDateString() %></span>
+          </div>
+
+          <% if (user) { %>
+            <form method="POST" action="/blogs/<%= blog._id %>/like">
+              <button type="submit" class="btn btn-ghost">👍 Like</button>
+            </form>
+
+            <form method="POST" action="/blogs/<%= blog._id %>/comment" class="form-row">
+              <input type="text" name="text" placeholder="Add a comment..." class="input" required>
+              <button type="submit" class="btn btn-primary">Comment</button>
+            </form>
+
+            
+          <% } %>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+</html>

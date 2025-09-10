@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog App</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <a class="brand" href="/">
+        <div class="logo">B</div>
+        <div>
+          <div style="font-weight:700">ThoughtNest</div>
+          <div class="small">Write. Share. Discover.</div>
+        </div>
+      </a>
+      <nav class="navlinks">
+        <a href="/blogs" class="btn btn-ghost">Back to Blogs</a>
+        <a href="/auth/logout" class="btn btn-primary">Logout</a>
+      </nav>
+    </header>
+
+    <h1 class="center">Create New Blog</h1>
+
+    <div class="form-card">
+      <form action="/blogs/new" method="POST">
+        <div class="form-row">
+          <label class="label">Title</label>
+          <input type="text" name="title" class="input" required>
+        </div>
+        <div class="form-row">
+          <label class="label">Content</label>
+          <textarea name="content" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Publish</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+

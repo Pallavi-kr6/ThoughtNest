@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | Blog App</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <a class="brand" href="/">
+        <div class="logo">B</div>
+        <div>
+          <div style="font-weight:700">ThoughtNest</div>
+          <div class="small">Write. Share. Discover.</div>
+        </div>
+      </a>
+      <nav class="navlinks">
+        <a href="/blogs" class="btn btn-ghost">Blogs</a>
+        <a href="/auth/logout" class="btn btn-primary">Logout</a>
+      </nav>
+    </header>
+
+    <h1 class="center">Dashboard</h1>
+
+    <div class="hero">
+      <div class="hero-left">
+        <h2>Hello, <%= user.displayName %> 👋</h2>
+        <p>Here’s a quick summary of your activity.</p>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="blog-card">
+        <h2>Your Blogs</h2>
+        <p>You have written <%= stats.posts %> posts.</p>
+      </div>
+      <div class="blog-card">
+        <h2>Your Likes</h2>
+        <p>You have liked <%= stats.likes %> blogs.</p>
+      </div>
+      <div class="blog-card">
+        <h2>Your Comments</h2>
+        <p>You have written <%= stats.comments %> comments.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

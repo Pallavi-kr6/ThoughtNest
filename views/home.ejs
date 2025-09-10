@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home | Blog App</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <a class="brand" href="/">
+        <div class="logo">B</div>
+        <div>
+          <div style="font-weight:700">ThoughtNest</div>
+          <div class="small">Write. Share. Discover.</div>
+        </div>
+      </a>
+      <nav class="navlinks">
+        <% if (user) { %>
+          <a href="/blogs" class="btn btn-primary">Go to Blogs</a>
+          <a href="/auth/logout" class="btn btn-ghost">Logout</a>
+        <% } else { %>
+          <a href="/auth/google" class="btn btn-primary">Login with Google</a>
+        <% } %>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div class="hero-left">
+        <h1>Welcome to MyBlog</h1>
+        <p>Share your thoughts, like posts, and comment on your favorites.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
